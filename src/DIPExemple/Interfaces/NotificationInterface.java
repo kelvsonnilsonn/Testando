@@ -1,4 +1,4 @@
-package Interfaces;
+package DIPExemple.Interfaces;
 
 public interface NotificationInterface {
     void sendSMS();

@@ -1,6 +1,6 @@
-package Services;
+package DIPExemple.Services;
 
-import Interfaces.AudioInterface;
+import DIPExemple.Interfaces.AudioInterface;
 
 public class AudioService implements AudioInterface {
     @Override

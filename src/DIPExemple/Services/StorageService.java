@@ -1,6 +1,6 @@
-package Services;
+package DIPExemple.Services;
 
-import Interfaces.StorageInterface;
+import DIPExemple.Interfaces.StorageInterface;
 
 public class StorageService implements StorageInterface {
     @Override

@@ -1,6 +1,6 @@
-package Services;
+package DIPExemple.Services;
 
-import Interfaces.NotificationInterface;
+import DIPExemple.Interfaces.NotificationInterface;
 
 public class NotificationService implements NotificationInterface {
     @Override

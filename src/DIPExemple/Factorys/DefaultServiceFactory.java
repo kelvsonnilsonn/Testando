@@ -1,13 +1,13 @@
-package Factorys;
+package DIPExemple.Factorys;
 
-import Interfaces.AudioInterface;
-import Interfaces.MessageInterface;
-import Interfaces.NotificationInterface;
-import Interfaces.StorageInterface;
-import Services.AudioService;
-import Services.MessageService;
-import Services.NotificationService;
-import Services.StorageService;
+import DIPExemple.Interfaces.AudioInterface;
+import DIPExemple.Interfaces.MessageInterface;
+import DIPExemple.Interfaces.NotificationInterface;
+import DIPExemple.Interfaces.StorageInterface;
+import DIPExemple.Services.AudioService;
+import DIPExemple.Services.MessageService;
+import DIPExemple.Services.NotificationService;
+import DIPExemple.Services.StorageService;
 
 public class DefaultServiceFactory implements ServiceFactory{
 

@@ -1,9 +1,9 @@
-package Factorys;
+package DIPExemple.Factorys;
 
-import Interfaces.AudioInterface;
-import Interfaces.MessageInterface;
-import Interfaces.NotificationInterface;
-import Interfaces.StorageInterface;
+import DIPExemple.Interfaces.AudioInterface;
+import DIPExemple.Interfaces.MessageInterface;
+import DIPExemple.Interfaces.NotificationInterface;
+import DIPExemple.Interfaces.StorageInterface;
 
 public interface ServiceFactory {
     MessageInterface createMessageService();

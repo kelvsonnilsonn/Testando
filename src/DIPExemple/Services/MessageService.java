@@ -1,6 +1,6 @@
-package Services;
+package DIPExemple.Services;
 
-import Interfaces.MessageInterface;
+import DIPExemple.Interfaces.MessageInterface;
 
 public class MessageService implements MessageInterface {
     @Override

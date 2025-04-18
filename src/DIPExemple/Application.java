@@ -1,8 +1,10 @@
-import Factorys.ServiceFactory;
-import Interfaces.AudioInterface;
-import Interfaces.MessageInterface;
-import Interfaces.NotificationInterface;
-import Interfaces.StorageInterface;
+package DIPExemple;
+
+import DIPExemple.Factorys.ServiceFactory;
+import DIPExemple.Interfaces.AudioInterface;
+import DIPExemple.Interfaces.MessageInterface;
+import DIPExemple.Interfaces.NotificationInterface;
+import DIPExemple.Interfaces.StorageInterface;
 
 public class Application {
     private final MessageInterface messageService;
