@@ -1,19 +1,19 @@
 package SOLIDExercises.RHSystem.Factorys;
 
-import SOLIDExercises.RHSystem.Interfaces.ReportInterface;
+import SOLIDExercises.RHSystem.Interfaces.RHReportInterface;
 
 import SOLIDExercises.RHSystem.Services.ReportGenerators.RoleReport;
 import SOLIDExercises.RHSystem.Services.ReportGenerators.SalaryReport;
 
-public class DefaultReportGeneratorsFactory implements ReportGeneratorFactory {
+public class DefaultReportGeneratorFactory implements RHReportGeneratorFactory {
 
     @Override
-    public ReportInterface createRoleRGenerator() {
+    public RHReportInterface createRoleRGenerator() {
         return new RoleReport();
     }
 
     @Override
-    public ReportInterface createSalaryRGenerator() {
+    public RHReportInterface createSalaryRGenerator() {
         return new SalaryReport();
     }
 }

@@ -1,8 +1,8 @@
 package Exercises.PaymentSystem.Services;
 
-import Exercises.PaymentSystem.Interfaces.PaymentInterface;
+import Exercises.PaymentSystem.Interfaces.PSPaymentInterface;
 
-public class PixPayment implements PaymentInterface {
+public class PSPixPayment implements PSPaymentInterface {
 
     @Override
     public void processPayment(double amount){

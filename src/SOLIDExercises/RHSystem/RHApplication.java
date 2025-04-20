@@ -1,21 +1,21 @@
 package SOLIDExercises.RHSystem;
 
-import SOLIDExercises.RHSystem.Factorys.ReportGeneratorFactory;
-import SOLIDExercises.RHSystem.Factorys.ReportSenderFactory;
-import SOLIDExercises.RHSystem.Interfaces.ReportInterface;
-import SOLIDExercises.RHSystem.Interfaces.ReportSenderInterface;
+import SOLIDExercises.RHSystem.Factorys.RHReportGeneratorFactory;
+import SOLIDExercises.RHSystem.Factorys.RHReportSenderFactory;
+import SOLIDExercises.RHSystem.Interfaces.RHReportInterface;
+import SOLIDExercises.RHSystem.Interfaces.RHReportSenderInterface;
 
-public class Application {
-    private final ReportSenderInterface reportAPI;
-    private final ReportSenderInterface reportPDF;
-    private final ReportSenderInterface reportEMAIL;
+public class RHApplication {
+    private final RHReportSenderInterface reportAPI;
+    private final RHReportSenderInterface reportPDF;
+    private final RHReportSenderInterface reportEMAIL;
 
-    private final ReportInterface roleReport;
-    private final ReportInterface salaryReport;
+    private final RHReportInterface roleReport;
+    private final RHReportInterface salaryReport;
 
     private String generatedReport;
 
-    public Application(ReportSenderFactory senderFactory, ReportGeneratorFactory generatorFactory){
+    public RHApplication(RHReportSenderFactory senderFactory, RHReportGeneratorFactory generatorFactory){
         this.reportAPI = senderFactory.createAPIReporter();
         this.reportPDF = senderFactory.createPDFReporter();
         this.reportEMAIL = senderFactory.createEMAILReporter();

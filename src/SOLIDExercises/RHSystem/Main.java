@@ -1,15 +1,15 @@
 package SOLIDExercises.RHSystem;
 
-import SOLIDExercises.RHSystem.Factorys.DefaultReportGeneratorsFactory;
-import SOLIDExercises.RHSystem.Factorys.DefaultReportSendersFactory;
-import SOLIDExercises.RHSystem.Factorys.ReportGeneratorFactory;
-import SOLIDExercises.RHSystem.Factorys.ReportSenderFactory;
+import SOLIDExercises.RHSystem.Factorys.DefaultReportGeneratorFactory;
+import SOLIDExercises.RHSystem.Factorys.DefaultReportSenderFactory;
+import SOLIDExercises.RHSystem.Factorys.RHReportGeneratorFactory;
+import SOLIDExercises.RHSystem.Factorys.RHReportSenderFactory;
 
 public class Main {
     public static void main(String[] args) {
-        ReportGeneratorFactory generatedFactory = new DefaultReportGeneratorsFactory();
-        ReportSenderFactory senderFactory = new DefaultReportSendersFactory();
-        Application app = new Application(senderFactory, generatedFactory);
+        RHReportGeneratorFactory generatedFactory = new DefaultReportGeneratorFactory();
+        RHReportSenderFactory senderFactory = new DefaultReportSenderFactory();
+        RHApplication app = new RHApplication(senderFactory, generatedFactory);
 
         app.run(1, 1);
     }

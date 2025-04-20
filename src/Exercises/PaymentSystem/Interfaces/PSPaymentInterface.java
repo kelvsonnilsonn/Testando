@@ -1,5 +1,5 @@
 package Exercises.PaymentSystem.Interfaces;
 
-public interface PaymentInterface {
+public interface PSPaymentInterface {
     void processPayment(double amount);
 }

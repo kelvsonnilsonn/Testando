@@ -1,8 +1,8 @@
 package Exercises.NotificationStudy.Services;
 
-import Exercises.NotificationStudy.Interfaces.NotificationInterface;
+import Exercises.NotificationStudy.Interfaces.NSNotificationInterface;
 
-public class PushNotification implements NotificationInterface {
+public class PushNotification implements NSNotificationInterface {
 
     @Override
     public void sendNotification(String message){

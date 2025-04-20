@@ -1,16 +1,16 @@
 package Exercises.NotificationStudy;
 
-import Exercises.NotificationStudy.Factorys.NotificationFactory;
-import Exercises.NotificationStudy.Interfaces.NotificationInterface;
+import Exercises.NotificationStudy.Factorys.NSNotificationFactory;
+import Exercises.NotificationStudy.Interfaces.NSNotificationInterface;
 
 import java.util.Scanner;
 
-public class Application {
-    private final NotificationInterface emailSender;
-    private final NotificationInterface smsSender;
-    private final NotificationInterface pushSender;
+public class NSApplication {
+    private final NSNotificationInterface emailSender;
+    private final NSNotificationInterface smsSender;
+    private final NSNotificationInterface pushSender;
 
-    public Application(NotificationFactory factory){
+    public NSApplication(NSNotificationFactory factory){
         this.emailSender = factory.createEmailNotification();
         this.smsSender = factory.createSMSNotification();
         this.pushSender = factory.createPushNotification();

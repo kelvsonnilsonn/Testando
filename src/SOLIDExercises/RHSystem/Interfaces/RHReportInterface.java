@@ -1,5 +1,5 @@
 package SOLIDExercises.RHSystem.Interfaces;
 
-public interface ReportInterface {
+public interface RHReportInterface {
     String generateReport();
 }

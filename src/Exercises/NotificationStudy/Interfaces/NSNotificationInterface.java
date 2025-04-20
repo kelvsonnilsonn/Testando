@@ -1,5 +1,5 @@
 package Exercises.NotificationStudy.Interfaces;
 
-public interface NotificationInterface {
+public interface NSNotificationInterface {
     void sendNotification(String message);
 }

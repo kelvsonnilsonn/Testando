@@ -1,8 +1,8 @@
 package SOLIDExercises.RHSystem.Services.ReportsType;
 
-import SOLIDExercises.RHSystem.Interfaces.ReportSenderInterface;
+import SOLIDExercises.RHSystem.Interfaces.RHReportSenderInterface;
 
-public class EmailReportService implements ReportSenderInterface {
+public class EmailReportService implements RHReportSenderInterface {
 
     @Override
     public void sendReport(String report){

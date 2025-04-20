@@ -1,6 +1,6 @@
 package SOLIDExercises.RHSystem.Interfaces;
 
-public interface ReportSenderInterface {
+public interface RHReportSenderInterface {
 
     void sendReport(String report);
 }

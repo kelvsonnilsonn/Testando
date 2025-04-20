@@ -1,24 +1,24 @@
 package Exercises.NotificationStudy.Factorys;
 
-import Exercises.NotificationStudy.Interfaces.NotificationInterface;
+import Exercises.NotificationStudy.Interfaces.NSNotificationInterface;
 import Exercises.NotificationStudy.Services.EmailNotification;
 import Exercises.NotificationStudy.Services.PushNotification;
 import Exercises.NotificationStudy.Services.SMSNotification;
 
-public class DefaultNotificationFactory implements NotificationFactory{
+public class DefaultNotificationFactory implements NSNotificationFactory {
 
     @Override
-    public NotificationInterface createEmailNotification(){
+    public NSNotificationInterface createEmailNotification(){
         return new EmailNotification();
     }
 
     @Override
-    public NotificationInterface createSMSNotification(){
+    public NSNotificationInterface createSMSNotification(){
         return new SMSNotification();
     }
 
     @Override
-    public NotificationInterface createPushNotification(){
+    public NSNotificationInterface createPushNotification(){
         return new PushNotification();
     }
 }

@@ -1,31 +1,31 @@
 package Exercises.PaymentSystem.Factorys;
 
-import Exercises.PaymentSystem.Interfaces.PaymentInterface;
-import Exercises.PaymentSystem.Services.BoletoPayment;
-import Exercises.PaymentSystem.Services.CardPayment;
-import Exercises.PaymentSystem.Services.CashPayment;
-import Exercises.PaymentSystem.Services.PixPayment;
+import Exercises.PaymentSystem.Interfaces.PSPaymentInterface;
+import Exercises.PaymentSystem.Services.PSBoletoPayment;
+import Exercises.PaymentSystem.Services.PSCardPayment;
+import Exercises.PaymentSystem.Services.PSCashPayment;
+import Exercises.PaymentSystem.Services.PSPixPayment;
 
-public class DefaultPaymentFactory implements PaymentFactory {
+public class DefaultPaymentFactory implements PSPaymentFactory {
 
     @Override
-    public PaymentInterface createBoletoPayment(){
-        return new BoletoPayment();
+    public PSPaymentInterface createBoletoPayment(){
+        return new PSBoletoPayment();
     }
 
     @Override
-    public PaymentInterface createPixPayment(){
-        return new PixPayment();
+    public PSPaymentInterface createPixPayment(){
+        return new PSPixPayment();
     }
 
     @Override
-    public PaymentInterface createCashPayment(){
-        return new CashPayment();
+    public PSPaymentInterface createCashPayment(){
+        return new PSCashPayment();
     }
 
     @Override
-    public PaymentInterface createCardPayment(){
-        return new CardPayment();
+    public PSPaymentInterface createCardPayment(){
+        return new PSCardPayment();
     }
 
 }

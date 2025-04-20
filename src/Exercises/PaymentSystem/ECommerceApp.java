@@ -1,17 +1,17 @@
 package Exercises.PaymentSystem;
 
-import Exercises.PaymentSystem.Factorys.PaymentFactory;
-import Exercises.PaymentSystem.Interfaces.PaymentInterface;
+import Exercises.PaymentSystem.Factorys.PSPaymentFactory;
+import Exercises.PaymentSystem.Interfaces.PSPaymentInterface;
 
 import java.util.Scanner;
 
 public class ECommerceApp {
-    private final PaymentInterface boletoPayer;
-    private final PaymentInterface cashPayer;
-    private final PaymentInterface cardPayer;
-    private final PaymentInterface pixPayer;
+    private final PSPaymentInterface boletoPayer;
+    private final PSPaymentInterface cashPayer;
+    private final PSPaymentInterface cardPayer;
+    private final PSPaymentInterface pixPayer;
 
-    public ECommerceApp(PaymentFactory factory){
+    public ECommerceApp(PSPaymentFactory factory){
         this.boletoPayer = factory.createBoletoPayment();
         this.cashPayer = factory.createCashPayment();
         this.cardPayer = factory.createCardPayment();
