@@ -13,7 +13,10 @@ public class Main {
         WebPaymentServicesFactory paymentFactory = new DefaultPaymentServicesFactory();
         WebDiscountServicesFactory discountFactory = new DefaultDiscountServicesFactory();
         Scanner scan = new Scanner(System.in);
+
         WebApplication app = new WebApplication(discountFactory, paymentFactory, scan);
-        app.run(new Request("Panela", 135.20, 1)); // Criar método para definir novos objetos. Simples.
+
+        Request request = new Request("Notebook Gamer", 4500.00, 1);
+        app.run(request);
     }
 }
