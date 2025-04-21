@@ -11,6 +11,6 @@ public class Main {
         RHReportSenderFactory senderFactory = new DefaultReportSenderFactory();
         RHApplication app = new RHApplication(senderFactory, generatedFactory);
 
-        app.run(1, 1);
+        app.run(1, 2);
     }
 }
