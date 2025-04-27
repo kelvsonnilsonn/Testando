@@ -1,28 +1,24 @@
 package LibrarySystem.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import LibrarySystem.model.validateModels.CPF.CPF;
+import LibrarySystem.model.validateModels.Email.Email;
 
 public class Client {
-    private static int idCounter = 1;
     private String name;
-    private String cpf;
+    private CPF cpf;
+    private Email email;
     private char gender;
-    private final int id;
 
-    private List<Book> borrowedBooks = new ArrayList<>();
-
-    public Client(String name, String cpf, char gender){
+    public Client(String name, CPF cpf, Email email, char gender){
         this.name = name;
         this.cpf = cpf;
+        this.email = email;
         this.gender = gender;
-
-        this.id = idCounter++;
     }
 
-    public int getId(){ return this.id; }
     public String getName(){ return this.name; }
-    public String getCPF() { return this.cpf; }
+    public String getCPFNumber() { return this.cpf.getCpf(); }
+    public String getEmailAddress() { return this.email.getEmail(); }
     public char getGender() { return this.gender;}
 
 }

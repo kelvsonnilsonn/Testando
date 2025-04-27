@@ -3,13 +3,10 @@ package LibrarySystem.model;
 import java.sql.Date;
 
 public class Book {
-    private static int bookIdCounter = 1;
-
-    private final int bookId;
-    private String title;
-    private String author;
-    private String description;
-    private Date creationDate;
+    private final String title;
+    private final String author;
+    private final String description;
+    private final Date creationDate;
 
     public Book(String title, String author, String description, Date date){
         this.author = author;
@@ -17,11 +14,6 @@ public class Book {
         this.description = description;
         this.creationDate = date;
 
-        this.bookId = bookIdCounter++;
-    }
-
-    public int getBookId() {
-        return bookId;
     }
 
     public Date getCreationDate() {

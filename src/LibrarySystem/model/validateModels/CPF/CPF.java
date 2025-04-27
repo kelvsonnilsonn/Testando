@@ -9,7 +9,7 @@ public class CPF {  // tell, don't ask
         this.cpf = cpf;
     }
 
-    public String getInfo(){ return this.cpf; }
+    public String getCpf(){ return this.cpf; }
 
     private void validate(String cpf){
 
