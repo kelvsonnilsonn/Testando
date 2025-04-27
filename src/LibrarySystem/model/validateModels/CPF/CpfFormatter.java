@@ -1,12 +1,11 @@
 package LibrarySystem.model.validateModels.CPF;
 
+import java.util.Objects;
+
 class CpfFormatter {
 
     private static String clearCPF(String cpf) {
-        if (cpf == null) {
-            throw new IllegalArgumentException("[ERRO] CPF não deve se null."); // fast-fail
-        }
-
+        Objects.requireNonNull(cpf, "[ERRO] CPF não deve se null.");
         return cpf.replaceAll("[^0-9]", "");
     }
 
