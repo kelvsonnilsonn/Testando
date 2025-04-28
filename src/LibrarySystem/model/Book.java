@@ -1,34 +1,43 @@
 package LibrarySystem.model;
 
+import LibrarySystem.model.Enums.BookStatus;
+import LibrarySystem.model.variableModels.BookInformation;
+
 import java.sql.Date;
 
 public class Book {
-    private final String title;
-    private final String author;
-    private final String description;
-    private final Date creationDate;
+    private final BookInformation data;
+    private BookStatus status;
 
-    public Book(String title, String author, String description, Date date){
-        this.author = author;
-        this.title = title;
-        this.description = description;
-        this.creationDate = date;
-
+    public Book(BookInformation data){
+        this.data = data;
+        this.status = BookStatus.WAITING_FOR_BORROWER;
     }
 
     public Date getCreationDate() {
-        return creationDate;
+        return data.getCreationDate();
     }
-
     public String getAuthor() {
-        return author;
+        return data.getAuthor();
     }
-
     public String getDescription() {
-        return description;
+        return data.getDescription();
     }
-
     public String getTitle() {
-        return title;
+        return data.getTitle();
+    }
+    public String getBookStatus() { return status.getBookStatus(); }
+    public void changeStatus(){ status = (status == BookStatus.BORROWED) ? BookStatus.WAITING_FOR_BORROWER : BookStatus.BORROWED; }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Title: ").append(this.getTitle()).append("\n")
+                .append("Author: ").append(this.getAuthor()).append("\n")
+                .append("Description: ").append(this.getDescription()).append("\n")
+                .append("Date: ").append(getCreationDate().toString());
+
+        return sb.toString();
     }
 }
