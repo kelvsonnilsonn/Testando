@@ -36,7 +36,8 @@ public class Book {
         sb.append("Title: ").append(this.getTitle()).append("\n")
                 .append("Author: ").append(this.getAuthor()).append("\n")
                 .append("Description: ").append(this.getDescription()).append("\n")
-                .append("Date: ").append(getCreationDate().toString());
+                .append("Date: ").append(getCreationDate().toString()).append("\n")
+                .append("Status: ").append(getBookStatus()).append("\n");
 
         return sb.toString();
     }

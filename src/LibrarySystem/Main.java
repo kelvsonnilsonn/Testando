@@ -10,16 +10,15 @@ import LibrarySystem.model.validateModels.CPF.CPF;
 import LibrarySystem.model.validateModels.Email.Email;
 
 import java.sql.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
 
-        Client cliente1 = new Client(1, "Kerison",
-                new CPF("11863304495"),
-                new Email("kerisonnilson01@gmail.com"),
-                'M');
+        LibraryApplication app = new LibraryApplication(scan);
+        app.run();
 
-        // new ClientDataAccessObject().addClientInLibrary(cliente1);
-        new ClientDataAccessObject().searchClientInLibrary(5);
+        scan.close();
     }
 }

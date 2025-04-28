@@ -1,8 +1,8 @@
 package LibrarySystem.model.Enums;
 
 public enum BookStatus {
-    BORROWED("The book was borrowed."),
-    WAITING_FOR_BORROWER("The book is waiting for someone to borrower it.");
+    BORROWED("BORROWED"),
+    WAITING_FOR_BORROWER("UNBORROWED");
 
     private final String description;
 

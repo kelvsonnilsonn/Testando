@@ -17,9 +17,9 @@ public class BookManagerApp {
     public void insertBookInTheLibrary(String title, String author, String description, Date date){
 
         Book new_Book = new Book(new BookInformation(title, author, description, date));
-        System.out.printf("Trying to insert the book %s in the list.", title);
+        System.out.printf("Trying to insert the book %s in the list.\n", title);
         books.add(new_Book);
-        System.out.printf("%s was inserted in the list.", title);
+        System.out.printf("%s was inserted in the list.\n", title);
 
     }
 
@@ -31,5 +31,10 @@ public class BookManagerApp {
 
     public void listBooksFromTheLibrary(){
         books.forEach(System.out::println);
+//        books.stream().filter(book -> !(book.getBookStatus().equals("BORROWED"))).forEach(System.out::println);
+    }
+
+    public Book getBook(String title){
+        return books.stream().filter(book -> book.getTitle().equals(title)).findFirst().orElse(null);
     }
 }

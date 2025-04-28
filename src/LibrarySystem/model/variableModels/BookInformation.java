@@ -18,15 +18,12 @@ public class BookInformation {
     public Date getCreationDate() {
         return creationDate;
     }
-
     public String getAuthor() {
         return author;
     }
-
     public String getDescription() {
         return description;
     }
-
     public String getTitle() {
         return title;
     }

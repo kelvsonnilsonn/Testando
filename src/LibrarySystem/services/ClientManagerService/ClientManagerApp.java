@@ -2,6 +2,8 @@ package LibrarySystem.services.ClientManagerService;
 
 import LibrarySystem.model.Book;
 import LibrarySystem.model.Client;
+import LibrarySystem.model.validateModels.CPF.CPF;
+import LibrarySystem.model.validateModels.Email.Email;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,8 +15,12 @@ public class ClientManagerApp {
         this.clients = new ArrayList<>();
     }
 
-    public void addClientInTheLibrary(Client client){
-        clients.add(client);
+    public void listClientsFromTheLibrary(){
+        clients.forEach(System.out::println);
+    }
+
+    public void addClientInTheLibrary(int id, String name, CPF cpf, Email email, char gender){
+        clients.add(new Client(id, name, cpf, email, gender));
     }
 
     public void borrowerBookForClient(Book book, String clientName){
