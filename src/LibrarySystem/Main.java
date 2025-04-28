@@ -1,15 +1,8 @@
 package LibrarySystem;
 
-import LibrarySystem.Database.DataAccessFolder.BookDataAccessObject;
-import LibrarySystem.Database.DataAccessFolder.ClientDataAccessObject;
+import LibrarySystem.Application.LibraryApplication;
+import LibrarySystem.services.MenuServices.Factorys.MenuFactory;
 
-import LibrarySystem.model.Book;
-import LibrarySystem.model.Client;
-
-import LibrarySystem.model.validateModels.CPF.CPF;
-import LibrarySystem.model.validateModels.Email.Email;
-
-import java.sql.Date;
 import java.util.Scanner;
 
 public class Main {

@@ -1,6 +1,6 @@
 package LibrarySystem.Database.DataUI;
 
-import LibrarySystem.Interfaces.PrinterUtilsInterface;
+import LibrarySystem.Interfaces.UtilsInterfaces.PrinterUtilsInterface;
 import LibrarySystem.model.Client;
 
 public class ClientDataPrinter implements PrinterUtilsInterface<Client> {
