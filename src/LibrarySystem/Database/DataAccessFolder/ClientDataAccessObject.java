@@ -14,6 +14,7 @@ import LibrarySystem.model.Client;
 public class ClientDataAccessObject {
 
     public void addClientInLibrary(Client client) {
+
         try (Connection conn = ConnectDatabase.getConnection()) {
             InsertClient.addClientInLibrary(client, conn);
         } catch (SQLException e) {

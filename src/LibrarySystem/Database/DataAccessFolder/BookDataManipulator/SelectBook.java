@@ -9,18 +9,17 @@ import java.sql.SQLException;
 
 public class SelectBook {
     public static Book findBookInLibrary(Connection conn, int id){
-
         String sql = "SELECT * FROM books WHERE bookId = ?";
 
         Book foundedBook = null;
 
-        try(PreparedStatement ps = conn.prepareStatement(sql);
-            ResultSet result = ps.executeQuery()){
+        try(PreparedStatement ps = conn.prepareStatement(sql)){
 
             ps.setInt(1, id);
+            ResultSet result = ps.executeQuery();
 
             if(!result.next()){
-                throw new IllegalArgumentException("[ERROR] Book don't found in database.");
+                return foundedBook;
             }
 
             foundedBook = new Book(
@@ -33,7 +32,7 @@ public class SelectBook {
             foundedBook.setBookIdFromDataBase(result.getInt("bookId"));
 
         } catch (SQLException e){
-            throw new RuntimeException("[ERROR] Unable to access client data.");
+            throw new RuntimeException("[ERROR] Unable to access book data.");
         }
 
         return foundedBook;

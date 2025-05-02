@@ -20,12 +20,13 @@ public class ClientManagerApp {
         clients.forEach(System.out::println);
     }
 
-    public void addClientInTheLibrary(int id, String name, CPF cpf, Email email, char gender){
+    public void addClientInTheLibrary(String name, CPF cpf, Email email, char gender){
 
         try{
 
-            new ClientDataAccessObject().addClientInLibrary(new Client(id, name, cpf, email, gender));
-            clients.add(new Client(id, name, cpf, email, gender));
+            Client clientToAdd = new Client(name, cpf, email, gender);
+            new ClientDataAccessObject().addClientInLibrary(clientToAdd);
+            clients.add(clientToAdd);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

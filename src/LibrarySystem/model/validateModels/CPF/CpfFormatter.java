@@ -11,6 +11,7 @@ class CpfFormatter {
 
     private static void validLength(String cpf) {
         if(cpf.length() != 11){
+            System.out.printf("Tamanho do cpf: %d\n", cpf.length());
             throw new IllegalArgumentException("[ERRO] CPF deve conter tamanho fixo de 11 algarismos.");
         }
     }

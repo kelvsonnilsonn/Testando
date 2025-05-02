@@ -58,8 +58,8 @@ public class MenuHandler {
 
     private void createClient(){
         String[] dataCreateClient = menu(MenuFactory.MenuType.CREATE_CLIENT);
-        clientManager.addClientInTheLibrary(Integer.parseInt(dataCreateClient[0]), dataCreateClient[1],
-                new CPF(dataCreateClient[2]), new Email(dataCreateClient[3]), dataCreateClient[4].charAt(0));
+        clientManager.addClientInTheLibrary(dataCreateClient[0],
+                new CPF(dataCreateClient[1]), new Email(dataCreateClient[2]), dataCreateClient[3].charAt(0));
     }
 
     private void createBook(){

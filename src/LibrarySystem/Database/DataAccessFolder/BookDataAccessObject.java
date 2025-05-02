@@ -9,7 +9,6 @@ import LibrarySystem.Database.DataUI.BookDataPrinter;
 import LibrarySystem.model.Book;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class BookDataAccessObject {
@@ -19,7 +18,7 @@ public class BookDataAccessObject {
         try (Connection conn = ConnectDatabase.getConnection()){
             InsertBook.addBookInLibrary(book, conn);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("[ERROR] Unable to connect to the database. " + e);
         }
     }
 
@@ -32,7 +31,6 @@ public class BookDataAccessObject {
     }
 
     public Book searchBookInLibrary(int id){
-
         Book foundedBook = null;
 
         try (Connection conn = ConnectDatabase.getConnection();){

@@ -12,8 +12,8 @@ public class InsertBook {
         String sql = "INSERT INTO books (title, author, description, date) VALUES (?, ?, ?, ?)";
 
         try(PreparedStatement ps = conn.prepareStatement(sql)){
-            if(SelectBook.findBookInLibrary(conn, book.getBookId()) == null){
-                throw new IllegalArgumentException("[ERROR] User already exist in database.");
+            if(SelectBook.findBookInLibrary(conn, book.getBookId()) != null){
+                throw new IllegalArgumentException("[ERROR] Book already exist in database.");
             }
 
             ps.setString(1, book.getTitle());

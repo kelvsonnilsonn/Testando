@@ -7,24 +7,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
-    private final int id;
+    private int clientId;
     private String name;
     private CPF cpf;
     private Email email;
     private char gender;
-    private List<Book> borrowedBooks;
 
-    public Client(int id, String name, CPF cpf, Email email, char gender){
-        this.id = id;
+    private List<Book> borrowedBooks; // vai ser implementado também com mysql
+
+    public Client(String name, CPF cpf, Email email, char gender){
         this.name = name;
         this.cpf = cpf;
         this.email = email;
         this.gender = gender;
+        
+        this.clientId = -1;
 
         this.borrowedBooks = new ArrayList<>();
     }
 
-    public int getId(){ return this.id; }
+    public void setClientIdFromDataBase(int clientId) { this.clientId = clientId; }
+    public int getClientId(){ return this.clientId; }
     public String getName(){ return this.name; }
     public String getCPFNumber() { return this.cpf.getCpf(); }
     public String getEmailAddress() { return this.email.getEmail(); }
@@ -53,7 +56,7 @@ public class Client {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("ID: ").append(this.getId()).append("\n")
+        sb.append("ID: ").append(this.getClientId()).append("\n")
                 .append("Name: ").append(this.getName()).append("\n")
                 .append("CPF: ").append(this.getCPFNumber()).append("\n")
                 .append("Email: ").append(this.getEmailAddress()).append("\n")

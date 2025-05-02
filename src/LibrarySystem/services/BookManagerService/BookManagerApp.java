@@ -25,10 +25,18 @@ public class BookManagerApp {
 
     }
 
-    public int removeBookFromTheLibrary(String title){
+    public void removeBookFromTheLibrary(String title){
+        Book bookToRemove = getBookIdFromLibrary(title);
         System.out.printf("Trying to remove the book %s from the list.", title);
-        books.removeIf(book -> book.getTitle().equals(title));
+
+        new BookDataAccessObject().removeBookFromLibrary(bookToRemove.getBookId());
+        books.remove(bookToRemove);
+
         System.out.printf("%s was removed from the list.", title);
+    }
+
+    private Book getBookIdFromLibrary(String title){
+        return books.stream().filter(book->book.getTitle().equals(title)).findFirst().orElse(null);
     }
 
     public void listBooksFromTheLibrary(){

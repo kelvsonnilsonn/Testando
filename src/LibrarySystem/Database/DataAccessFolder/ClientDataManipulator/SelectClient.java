@@ -15,21 +15,23 @@ public class SelectClient {
 
         Client foundedClient = null;
 
-        try(PreparedStatement ps = conn.prepareStatement(sql); ResultSet result = ps.executeQuery()){
+        try(PreparedStatement ps = conn.prepareStatement(sql)){
 
             ps.setInt(1, id);
+            ResultSet result = ps.executeQuery();
 
             if(!result.next()){
-                throw new IllegalArgumentException("[ERROR] Client don't found in database.");
+                return foundedClient;
             }
 
             foundedClient =  new Client(
-                            result.getInt("clientId"),
                             result.getString("name"),
                             new CPF(result.getString("cpf")),
                             new Email(result.getString("email")),
                             result.getString("gender").charAt(0)
             );
+
+            foundedClient.setClientIdFromDataBase(result.getInt("clientId"));
 
         } catch (SQLException e){
                throw new RuntimeException("[ERROR] Unable to access client data.");

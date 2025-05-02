@@ -12,7 +12,7 @@ public class InsertClient {
         String sql = "INSERT INTO clients (name, cpf, email, gender) VALUES (?, ?, ?, ?)";
 
         try(PreparedStatement ps = conn.prepareStatement(sql)){
-            if(SelectClient.findClientInLibrary(conn, client.getId()) == null){
+            if(SelectClient.findClientInLibrary(conn, client.getClientId()) != null){
                 throw new IllegalArgumentException("[ERROR] User already exist in database.");
             }
 
