@@ -5,31 +5,18 @@ import LibrarySystem.model.variableModels.BookInformation;
 
 import java.sql.Date;
 
-public class Book {
+public class Book extends BookInformation{
     private int bookId;
-    private final BookInformation data;
     private BookStatus status;
 
     public Book(String title, String author, String description, Date date){
-        this.data = new BookInformation(title, author, description, date);
+        super(title, author, description, date);
         this.status = BookStatus.WAITING_FOR_BORROWER;
     }
 
     public void setBookIdFromDataBase(int bookId) { this.bookId = bookId; }
     public int getBookId() { return this.bookId; }
 
-    public Date getCreationDate() {
-        return data.getCreationDate();
-    }
-    public String getAuthor() {
-        return data.getAuthor();
-    }
-    public String getDescription() {
-        return data.getDescription();
-    }
-    public String getTitle() {
-        return data.getTitle();
-    }
     public String getBookStatus() { return status.getBookStatus(); }
     public void changeStatus(){ status = (status == BookStatus.BORROWED) ? BookStatus.WAITING_FOR_BORROWER : BookStatus.BORROWED; }
 

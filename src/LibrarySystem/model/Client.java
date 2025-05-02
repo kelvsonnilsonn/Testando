@@ -2,25 +2,17 @@ package LibrarySystem.model;
 
 import LibrarySystem.model.validateModels.CPF.CPF;
 import LibrarySystem.model.validateModels.Email.Email;
+import LibrarySystem.model.variableModels.ClientInformation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Client {
-    private int clientId;
-    private String name;
-    private CPF cpf;
-    private Email email;
-    private char gender;
-
+public class Client extends ClientInformation {
+    private int clientId;// ClientInformation
     private List<Book> borrowedBooks; // vai ser implementado também com mysql
 
-    public Client(String name, CPF cpf, Email email, char gender){
-        this.name = name;
-        this.cpf = cpf;
-        this.email = email;
-        this.gender = gender;
-        
+    public Client(String name, String cpf, String email, char gender){
+        super(name, cpf, email, gender);
         this.clientId = -1;
 
         this.borrowedBooks = new ArrayList<>();
@@ -28,10 +20,6 @@ public class Client {
 
     public void setClientIdFromDataBase(int clientId) { this.clientId = clientId; }
     public int getClientId(){ return this.clientId; }
-    public String getName(){ return this.name; }
-    public String getCPFNumber() { return this.cpf.getCpf(); }
-    public String getEmailAddress() { return this.email.getEmail(); }
-    public char getGender() { return this.gender;}
 
     public void borrowerBook(Book book){
         borrowedBooks.add(book);

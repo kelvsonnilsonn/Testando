@@ -2,7 +2,7 @@ package LibrarySystem.model.variableModels;
 
 import java.sql.Date;
 
-public class BookInformation {
+public abstract class BookInformation {
     private final String title;
     private final String author;
     private final String description;

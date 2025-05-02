@@ -26,8 +26,8 @@ public class SelectClient {
 
             foundedClient =  new Client(
                             result.getString("name"),
-                            new CPF(result.getString("cpf")),
-                            new Email(result.getString("email")),
+                            result.getString("cpf"),
+                            result.getString("email"),
                             result.getString("gender").charAt(0)
             );
 

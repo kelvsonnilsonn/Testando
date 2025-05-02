@@ -20,7 +20,7 @@ public class ClientManagerApp {
         clients.forEach(System.out::println);
     }
 
-    public void addClientInTheLibrary(String name, CPF cpf, Email email, char gender){
+    public void addClientInTheLibrary(String name, String cpf, String email, char gender){
 
         try{
 
