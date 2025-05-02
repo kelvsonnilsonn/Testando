@@ -2,11 +2,11 @@ package LibrarySystem.Database.DataAccessFolder;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import LibrarySystem.Database.ConnectFolder.ConnectDatabase;
 import LibrarySystem.Database.DataAccessFolder.ClientDataManipulator.InsertClient;
+import LibrarySystem.Database.DataAccessFolder.ClientDataManipulator.RemoveClient;
 import LibrarySystem.Database.DataAccessFolder.ClientDataManipulator.SelectClient;
 import LibrarySystem.Database.DataUI.ClientDataPrinter;
 import LibrarySystem.model.Client;
@@ -15,24 +15,27 @@ public class ClientDataAccessObject {
 
     public void addClientInLibrary(Client client) {
         try (Connection conn = ConnectDatabase.getConnection()) {
-
             InsertClient.addClientInLibrary(client, conn);
-
         } catch (SQLException e) {
             throw new RuntimeException("[ERROR] Unable to connect to the database.");
         }
     }
 
-    public void searchClientInLibrary(int id){
+    public void removeClientFromLibrary(int id){
+        try(Connection conn = ConnectDatabase.getConnection()){
+            RemoveClient.removeClientFromLibrary(conn, id);
+        } catch (SQLException e){
+            throw new RuntimeException("[ERROR] Unable to connect to the database.");
+        }
+    }
 
-        String sql = "SELECT * FROM clients WHERE clientId = ?";
+    public Client searchClientInLibrary(int id){
+
+        Client foundedClient = null;
 
         try (Connection conn = ConnectDatabase.getConnection();){
 
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, id);
-
-            Client foundedClient = SelectClient.findClientInLibrary(ps);
+            foundedClient = SelectClient.findClientInLibrary(conn, id);
 
             ClientDataPrinter printer = new ClientDataPrinter();
             printer.printData(foundedClient);
@@ -40,5 +43,7 @@ public class ClientDataAccessObject {
             } catch (SQLException e) {
                 throw new RuntimeException("[ERROR] Unable to connect to the database to search for customers");
         }
+
+        return foundedClient;
     }
 }

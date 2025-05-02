@@ -1,5 +1,6 @@
 package LibrarySystem.services.MenuServices;
 
+import LibrarySystem.Database.DataAccessFolder.BookDataAccessObject;
 import LibrarySystem.Interfaces.MenuInterface;
 import LibrarySystem.services.MenuServices.AvailableMenus.BorrowBookMenu;
 import LibrarySystem.services.MenuServices.AvailableMenus.CreateBookMenu;
@@ -52,7 +53,8 @@ public class MenuHandler {
     private void removeBookFromLibrary(){
         System.out.print("Enter book title to remove: ");
         String titleToRemove = scan.nextLine();
-        bookManager.removeBookFromTheLibrary(titleToRemove); }
+        bookManager.removeBookFromTheLibrary(titleToRemove);
+    }
 
     private void createClient(){
         String[] dataCreateClient = menu(MenuFactory.MenuType.CREATE_CLIENT);

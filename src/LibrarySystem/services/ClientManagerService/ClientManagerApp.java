@@ -1,5 +1,6 @@
 package LibrarySystem.services.ClientManagerService;
 
+import LibrarySystem.Database.DataAccessFolder.ClientDataAccessObject;
 import LibrarySystem.model.Book;
 import LibrarySystem.model.Client;
 import LibrarySystem.model.validateModels.CPF.CPF;
@@ -20,7 +21,15 @@ public class ClientManagerApp {
     }
 
     public void addClientInTheLibrary(int id, String name, CPF cpf, Email email, char gender){
-        clients.add(new Client(id, name, cpf, email, gender));
+
+        try{
+
+            new ClientDataAccessObject().addClientInLibrary(new Client(id, name, cpf, email, gender));
+            clients.add(new Client(id, name, cpf, email, gender));
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void borrowerBookForClient(Book book, String clientName){
