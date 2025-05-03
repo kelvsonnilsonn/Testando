@@ -1,19 +1,15 @@
 package LibrarySystem.services.MenuServices;
 
-import LibrarySystem.Database.DataAccessFolder.BookDataAccessObject;
 import LibrarySystem.Interfaces.MenuInterface;
-import LibrarySystem.services.MenuServices.AvailableMenus.BorrowBookMenu;
-import LibrarySystem.services.MenuServices.AvailableMenus.CreateBookMenu;
-import LibrarySystem.services.MenuServices.AvailableMenus.CreateClientMenu;
-import LibrarySystem.services.MenuServices.AvailableMenus.ReturnBookMenu;
+
 import LibrarySystem.model.Book;
-import LibrarySystem.model.validateModels.CPF.CPF;
-import LibrarySystem.model.validateModels.Email.Email;
+
 import LibrarySystem.services.BookManagerService.BookManagerApp;
 import LibrarySystem.services.ClientManagerService.ClientManagerApp;
 import LibrarySystem.services.MenuServices.Factorys.MenuFactory;
 
 import java.sql.Date;
+
 import java.util.Scanner;
 
 public class MenuHandler {
@@ -28,18 +24,50 @@ public class MenuHandler {
         this.scan = scan;
     }
 
-    public void handleOption(int option){
+
+    public void handleOptionPageTwo(int option){
         switch (option) {
             case 1 -> listBooksFromLibrary();
-            case 2 -> listClientsFromLibrary();
-            case 3 -> createBook();
-            case 4 -> removeBookFromLibrary();
-            case 5 -> createClient();
-            case 6 -> borrowBook();
-            case 7 -> returnBookToLibrary();
+            case 2 -> listClientsFromLibrary(); // admin only
+            case 3 -> searchBookInLibrary();
+            case 4 -> searchClientInLibrary();
+            case 0 -> System.out.println("Exiting Library System...");
+            default -> System.out.println("Invalid option. Please try again.");
+
+            // case 2
+        }
+    }
+
+    public void handleOptionPageThree(int option){
+        switch (option){
+            case 1 -> createBook();
+            case 2 -> removeBookFromLibrary(); // admin only
+            case 3 -> createClient();
+            case 4 -> removeClientFromLibrary();
             case 0 -> System.out.println("Exiting Library System...");
             default -> System.out.println("Invalid option. Please try again.");
         }
+    }
+
+    public void handleOptionPageFour(int option){
+        switch (option){
+            case 1 -> borrowBook();
+            case 2 -> returnBookToLibrary();
+            case 0 -> System.out.println("Exiting Library System...");
+            default -> System.out.println("Invalid option. Please try again.");
+        }
+    }
+
+    private void searchClientInLibrary(){
+        System.out.println("Digite o id para pesquisar livro: ");
+        int id = scan.nextInt();        // CRIAR VERIFICAÇÃO (CLASSE ID);
+        clientManager.searchClientInLibrary(id);
+    }
+
+    private void searchBookInLibrary(){
+        System.out.println("Digite o id para pesquisar livro: ");
+        int id = scan.nextInt();        // CRIAR VERIFICAÇÃO (CLASSE ID);
+        bookManager.searchBookInLibrary(id);
     }
 
     private void listBooksFromLibrary(){
@@ -48,6 +76,11 @@ public class MenuHandler {
 
     private void listClientsFromLibrary(){
         clientManager.listClientsFromTheLibrary();
+    }
+    private void removeClientFromLibrary() {
+        System.out.println("Digite o id para remover: ");
+        int id = scan.nextInt();        // CRIAR VERIFICAÇÃO (CLASSE ID);
+        clientManager.removeClientFromLibrary(id);
     }
 
     private void removeBookFromLibrary(){
@@ -84,4 +117,5 @@ public class MenuHandler {
         MenuInterface menu = MenuFactory.createMenu(type, scan);
         return menu.collectData();
     }
+
 }

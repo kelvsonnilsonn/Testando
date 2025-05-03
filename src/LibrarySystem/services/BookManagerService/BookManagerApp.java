@@ -2,17 +2,22 @@ package LibrarySystem.services.BookManagerService;
 
 import LibrarySystem.Database.DataAccessFolder.BookDataAccessObject;
 
+import LibrarySystem.Database.DataAccessFolder.ClientDataAccessObject;
 import LibrarySystem.model.Book;
 
 import java.sql.Date;
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class BookManagerApp {
-    private List<Book> books;
+    private final List<Book> books;
 
     public BookManagerApp(){
-        this.books = new ArrayList<>();
+        this.books = new BookDataAccessObject().getAllBooksFromDataBase();
+    }
+
+    public void searchBookInLibrary(int id){
+        System.out.println(books.stream().filter(book -> book.getBookId() == id).findFirst().orElse(null));
     }
 
     public void insertBookInTheLibrary(String title, String author, String description, Date date){

@@ -1,7 +1,5 @@
 package LibrarySystem.model;
 
-import LibrarySystem.model.validateModels.CPF.CPF;
-import LibrarySystem.model.validateModels.Email.Email;
 import LibrarySystem.model.variableModels.ClientInformation;
 
 import java.util.ArrayList;
@@ -48,7 +46,7 @@ public class Client extends ClientInformation {
                 .append("Name: ").append(this.getName()).append("\n")
                 .append("CPF: ").append(this.getCPFNumber()).append("\n")
                 .append("Email: ").append(this.getEmailAddress()).append("\n")
-                .append("Gender: ").append(this.getGender());
+                .append("Gender: ").append(Character.toUpperCase(this.getGender()));
 
         return sb.toString();
     }

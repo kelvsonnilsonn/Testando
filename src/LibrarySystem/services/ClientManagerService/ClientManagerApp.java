@@ -3,17 +3,27 @@ package LibrarySystem.services.ClientManagerService;
 import LibrarySystem.Database.DataAccessFolder.ClientDataAccessObject;
 import LibrarySystem.model.Book;
 import LibrarySystem.model.Client;
-import LibrarySystem.model.validateModels.CPF.CPF;
-import LibrarySystem.model.validateModels.Email.Email;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClientManagerApp {
-    private List<Client> clients;
+    private final List<Client> clients;
 
     public ClientManagerApp(){
+//        this.clients = new ClientDataAccessObject().getAllClientsFromDataBase();
         this.clients = new ArrayList<>();
+    }
+
+    public void searchClientInLibrary(int id){
+        System.out.println((new ClientDataAccessObject().searchClientInLibrary(id)).toString());
+    }
+
+    public void removeClientFromLibrary(int id){
+        System.out.println("Trying to remove client.");
+        this.clients.removeIf(book -> book.getClientId() == id);
+        new ClientDataAccessObject().removeClientFromLibrary(id);
+        System.out.println("Client was removed.\n");
     }
 
     public void listClientsFromTheLibrary(){
