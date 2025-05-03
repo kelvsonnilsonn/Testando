@@ -59,7 +59,7 @@ public class MenuHandler {
     }
 
     private void searchClientInLibrary(){
-        System.out.println("Digite o id para pesquisar livro: ");
+        System.out.println("Digite o id para pesquisar client: ");
         int id = scan.nextInt();        // CRIAR VERIFICAÇÃO (CLASSE ID);
         clientManager.searchClientInLibrary(id);
     }
