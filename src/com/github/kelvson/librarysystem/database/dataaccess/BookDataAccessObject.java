@@ -24,11 +24,7 @@ public class BookDataAccessObject {
     }
 
     public List<Book> getAllBooksFromDatabase() {
-        try (Connection conn = ConnectDatabase.getConnection()) {
-            return DatabaseDataAccess.getAllBooksFromDatabase(conn);
-        } catch (SQLException e) {
-            throw new RuntimeException("[ERROR] Unable to connect to the database.", e);
-        }
+        return DatabaseDataAccess.getAllBooksFromDatabase(ConnectDatabase.getConnection());
     }
 
     public void removeBookFromLibrary(int id){

@@ -15,7 +15,7 @@ public class BookStorage {
 
     public BookStorage(BookDataAccessObject bookDataAccessObject){
         this.bookDataAccessObject = bookDataAccessObject;
-        this.books = new ArrayList<>();
+        this.books = bookDataAccessObject.getAllBooksFromDatabase();
     }
 
     public List<Book> getBooksFromBookStorage(){

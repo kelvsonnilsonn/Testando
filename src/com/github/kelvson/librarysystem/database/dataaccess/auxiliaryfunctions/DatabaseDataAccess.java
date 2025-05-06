@@ -12,7 +12,7 @@ public class DatabaseDataAccess {
     public static List<Book> getAllBooksFromDatabase(Connection conn) {
         List<Book> books = new ArrayList<>();
 
-        try (PreparedStatement ps = conn.prepareStatement("SELECT * FROM books")) {
+        try (PreparedStatement ps = conn.prepareStatement("SELECT * FROM books;")) {
             ResultSet result = ps.executeQuery();
             while (result.next()) {
                 Book book = new Book(
@@ -34,7 +34,7 @@ public class DatabaseDataAccess {
     public static List<Client> getAllClientsFromDatabase(Connection conn) {
         List<Client> clients = new ArrayList<>();
 
-        try (PreparedStatement ps = conn.prepareStatement("SELECT * FROM clients")) {
+        try (PreparedStatement ps = conn.prepareStatement("SELECT * FROM clients;")) {
             ResultSet result = ps.executeQuery();
             while (result.next()) {
                 Client client = new Client(

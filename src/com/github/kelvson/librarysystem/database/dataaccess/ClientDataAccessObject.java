@@ -24,11 +24,7 @@ public class ClientDataAccessObject {
     }
 
     public List<Client> getAllClientsFromDatabase() {
-        try (Connection conn = ConnectDatabase.getConnection()) {
-            return DatabaseDataAccess.getAllClientsFromDatabase(conn);
-        } catch (SQLException e) {
-            throw new RuntimeException("[ERROR] Unable to connect to the database.", e);
-        }
+            return DatabaseDataAccess.getAllClientsFromDatabase(ConnectDatabase.getConnection());
     }
 
 
