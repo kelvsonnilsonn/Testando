@@ -1,0 +1,27 @@
+Por que usar domínio invertido (como br.com.meusistema)
+Evita conflitos entre pacotes de projetos diferentes.
+
+Torna os nomes de pacotes únicos no mundo inteiro.
+
+Baseia-se no domínio da empresa ou instituição.
+
+===============================||==============================
+
+🌍 Exemplo real:
+Suponha que você trabalha para uma empresa com o domínio:
+
+www.mercadolivre.com.br
+
+O nome base dos pacotes seria:
+
+br.com.mercadolivre
+
+===============================||==============================
+
+Prefixo	Significado
+com.	Comercial (Ex: com.google, com.oracle)
+org.	Organização sem fins lucrativos
+edu.	Instituição educacional
+gov.	Governo
+br.	Brasil (código ISO de país)
+
