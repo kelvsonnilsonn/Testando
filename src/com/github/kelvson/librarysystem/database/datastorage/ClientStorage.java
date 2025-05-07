@@ -16,9 +16,7 @@ public class ClientStorage {
         this.clients = clientDataAccessObject.getAllClientsFromDatabase();
     }
 
-    public List<Client> getClientsFromClientStorage(){
-        return new ArrayList<>(clients);
-    }
+    public List<Client> getClientsFromClientStorage(){ return clients; }
 
     public void removeClientFromLibrary(int id){
         Client clientToRemove = getClientFromLibraryById(id);
@@ -30,8 +28,8 @@ public class ClientStorage {
         System.out.printf("%s was removed from the list.", clientToRemove.getName());
     }
 
-    public void addClientInTheLibrary(String name, String cpf, String email, char gender){
-        Client new_Client = new Client(name, cpf, email, gender);
+    public void addClientInTheLibrary(String name, String password, String cpf, String email, char gender){
+        Client new_Client = new Client(name, password, cpf, email, gender);
         System.out.printf("Trying to insert the book %s in the list.\n", name);
 
         clientDataAccessObject.addClientInLibrary(new_Client);

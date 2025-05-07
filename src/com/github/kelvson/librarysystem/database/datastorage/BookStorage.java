@@ -19,7 +19,7 @@ public class BookStorage {
     }
 
     public List<Book> getBooksFromBookStorage(){
-        return new ArrayList<>(books);
+        return books;
     }
 
     public void insertBookInTheLibrary(String title, String author, String description, Date date){
@@ -31,7 +31,6 @@ public class BookStorage {
         this.books.add(new_Book);
 
         System.out.printf("%s was inserted in the list.\n", title);
-
     }
 
     public void removeBookFromTheLibrary(String title){

@@ -10,7 +10,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         LibraryApplication app = new LibraryApplication(scan);
-        Client client = new Client("kelvson", "71787243400", "kelvsonnilson01@gmail.com", 'M');
+        Client client = new Client("kelvson", "kelvson1234","71787243400", "kelvsonnilson01@gmail.com", 'M');
         client.changeAdminStatus(true);
         app.run(client);
 

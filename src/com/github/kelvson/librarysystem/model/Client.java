@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client extends ClientInformation {
-    private List<Book> borrowedBooks; // vai ser implementado também com mysql
+    private final List<Book> borrowedBooks;
 
-    public Client(String name, String cpf, String email, char gender){
-        super(name, cpf, email, gender);
+    public Client(String name, String password, String cpf, String email, char gender){
+        super(name, cpf, email, password, gender);
 
         this.borrowedBooks = new ArrayList<>();
     }

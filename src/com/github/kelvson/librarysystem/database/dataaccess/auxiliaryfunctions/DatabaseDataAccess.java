@@ -39,6 +39,7 @@ public class DatabaseDataAccess {
             while (result.next()) {
                 Client client = new Client(
                         result.getString("name"),
+                        result.getString("pass"),
                         result.getString("cpf"),
                         result.getString("email"),
                         result.getString("gender").charAt(0)
@@ -50,7 +51,6 @@ public class DatabaseDataAccess {
         } catch (SQLException e) {
             throw new RuntimeException("[ERROR] Failed to retrieve clients.", e);
         }
-
         return clients;
     }
 }

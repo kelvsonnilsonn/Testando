@@ -68,8 +68,8 @@ public class InitialMenu {
 
     public static int initialMenuPageFour(Scanner scan){
         System.out.println("\n=== Library Menu - AUXILIARY ===");
-        System.out.println("6. Borrow a book");
-        System.out.println("7. Return a book");
+        System.out.println("1. Borrow a book");
+        System.out.println("2. Return a book");
         System.out.println("0. Exit");
         System.out.print("Select an option: ");
 
